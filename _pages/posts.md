@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /posts
+permalink: /posts/
 ---
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
