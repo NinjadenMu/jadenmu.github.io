@@ -4,8 +4,8 @@ last_modified_at: 2022-10-01
 categories:
   - applied-computer-science
   - high-school
-author: Jaden Mu
 mathjax: true
+classes: wide
 ---
 
 ### What is Gerrymandering?

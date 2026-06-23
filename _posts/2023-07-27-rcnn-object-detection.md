@@ -4,14 +4,14 @@ last_modified_at: 2023-07-27
 categories:
   - machine-learning
   - high-school
-author: Jaden Mu
 mathjax: true
+classes: wide
 ---
 
 ### What is Object Detection
 You probably know what image classification is - a model takes an image with some kind of object and labels what the object is.  Object Detection is slightly more complex.  Instead of an image with only one object, object detectors have to deal with images with multiple objects, separately labeling what each object is.  Object detectors also have to localize each object, drawing a bounding box around each object.
 
-![Classification vs Detection](/assets/Mini-RCNN/classification_vs_detection.jpeg)
+![Classification vs Detection](/assets/images/rcnn/classification_vs_detection.jpeg)
 
 ### Intro + Why RCNN?
 Recently I've been working on finetuning YOLO models for a paper I'm hoping to submit for ISEF.  The Ultralytics package provides a lot of streamlined high-level APIs, so finetuning and inference can be done without knowing anything about the model architecture, but I was nonetheless curious about what was actually going on under the hood.  YOLO, is of course, just one model architecture that can be applied to Object Detection - RCNN, Fast/Faster RCNN, and SSD models fill similar roles.
@@ -25,7 +25,7 @@ However, I actually think that RCNN is a more interesting model to implement fro
 ### Sliding Window Models - Leading up to the RCNN
 While image classification and object detection are two different tasks, they do share clear similarities.  Your first thought might therefore be to apply image classification models to object detection.  Since classification models can't draw bounding boxes or label multiple objects, we'll need to use an algorithm called sliding window search.  I like to think of sliding window search as being similar to a convolution operation, but with a classifier model taking in an image of dimensions N x M replacing the N x N kernel.  We run the image classifier model on each N x M "window" of the image, using the N x M window as the bounding box if an object is detected.  This window slides across the image by some step size so that the entire image can be processed.
 
-![Sliding Window](/assets/Mini-RCNN/sliding_window_example.gif)
+![Sliding Window](/assets/images/rcnn/sliding_window_example.gif)
 
 In the example above, a classifier for eyes, noses, and lips can be run on each window, which eventually "slides" over those objects.  Every time the classifier labels an eye, nose, or lip in a window, we save the position of the window and the label from the classifier.
 
@@ -40,7 +40,7 @@ The RCNN, standing for Region-based Convolutional Neural Network, sought to addr
 Instead of sliding windows of different sizes over every possible region, RCNN uses a region proposal algorithm to generate windows of the full image that are likely to contain objects.  A CNN is then used to extract features from each region, which are fed into a SVM image classifier.  You can think of the region proposal stage as generating possible bounding boxes (regions of interest) and the classification stage as filtering and labeling the possible bounding boxes.  RCNNs offered a massive performance improvement over sliding window detectors because their region proposal stage allowed slower CNNs to be applied to the relatively fewer windows (around 1000 compared to potential millions for sliding window detection).
 
 Of course, RCNNs have their own issues.  Most region proposal algorithms are hand-designed and aren't trained on a dataset in conjunction with the CNN and the SVM, so they can generate poor proposals (and be hard to adapt to a specific setting).  The most popular region proposal algorithms also generate a lot of proposals - although 2000 is a lot better than the number of windows from sliding window detectors, RCNNs can't even come close to real-time detection. Additionally, the final SVM classifier, although fast, is not ideal - we'd much prefer to just use a neural network end-to-end for classification.  The entire model is also obviously not differentiable.  These issues are all solved in clever ways in Fast-RCNN and Faster-RCNN, but I really like the conceptual simplicity of RCNNs and their use of 3 different algorithms.
-![RCNN Architecture Diagram](/assets/Mini-RCNN/rcnn_architecure.png)
+![RCNN Architecture Diagram](/assets/images/rcnn/rcnn_architecture.png)
 
 ### RCNN Region Proposal: Edge Boxes and Selective Search
 All region proposal algorithms need to return a list of windows that are likely to contain objects.  Of course, region proposal algorithms are not perfect, so they have to balance between precision and recall like any other model (where a true positive is if a proposed window actually contains an object).  Precision is equal to the algorithm's $$\frac{\text{True Positives}}{\text{True Positives + False Positives}}$$.  You can think of precision like quality - a region proposal algorithm with a very high precision is very unlikely to return irrelevant regions, although it may miss some relevant regions.  Recall is equal to the algorithm's $$\frac{\text{True Positives}}{\text{True Positives + False Negatives}}$$.  You can think of recall like quantity - a region proposal algorithm with a very high recall is likely to not miss any relevant regions but may also return some irrelevant regions.  For region proposal algorithms, we want to select algorithms and parameters that lead to a high *recall* - we're willing to waste some time checking irrelevant regions if that ensures that we won't miss any relevant regions.  
