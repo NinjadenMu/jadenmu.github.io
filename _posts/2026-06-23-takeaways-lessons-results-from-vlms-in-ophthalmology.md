@@ -15,6 +15,25 @@ I've spent the past 3 months at my job fine-tuning vision language models to be 
 3. VLMs and foundation models are useful but not a panacea - they're best used for problems traditional ML fails on, such as when a task requires language, generalization, or has very limited data available for training
 4. VLMs are bottlenecked by information loss in the decoder, not by the vision encoder in ophthalmic imaging data
 5. Tools may be a promising and easier way to improve VLM performance on domain problems (instead of fine-tuning)
+  * The bitter lesson applies.  Larger, better base models (perhaps with tools) beats smaller, lovingly-finetuned models
 
 ### Some Exigence
-The first problem I worked on at my job was a regression problem on longitudinal patient data.  Compared to standard medical imaging, working with longitudinal problems is even more data-limited because it can only be collected by a dedicated, multi-year effort with patients that are sufficiently incentivized to continue participating.  We were eventually able to come up with a clever solution to the problem by making some strong assumptions about the data (that seem to be correct based on the results we've achieved.)  This did take multiple months of working on the problem though, including lots of time spent hand-engineering classical computer vision techniques and experimenting with transfer learning (neither of which panned out.)  
+The first problem I worked on at my job was a regression problem on longitudinal patient data.  Compared to standard medical imaging, longitudinal problems are even more data-limited because data can only be collected by a dedicated, multi-year effort with patients that are sufficiently incentivized to continue participating.  While we were eventually able to come up with a clever solution to our particular problem by making some strong assumptions about the data (that seem to be correct based on the results we've achieved), the many months we spent on it convinced me that investing some effort into a better foundation model that could then solve many similar problems could lead to a big payoff.  
+
+The first hope was that VLMs would be able to solve a lot of problems we were interested in out of the box.  There were some promising results on a few very select problems, but performance was actually generally poor - on many evaluations, VLMs in the 4-8 billion parameter range would get performance not much better than random chance.  
+
+This was slightly disappointing but not particularly discouraging.  A lot of my prior research in applying VLMs for content moderation actually started in a similar way, with base performance being dramatically increased through relatively simple prompt engineering or finetuning.
+
+We decided R1-style GRPO training for reasoning using verifiable rewards would be a promising direction to try to improve VLMs, since we noticed that while RL had dramatically improved LLM performance on math and code over the past 2 years, there were relatively few results in the medical imaging space (and what did exist wasn't focused on ophthalmology).  At the same time, we knew that there was a relatively large quantity of ophthalmology imaging data (e.g. OCT B-Scans) with diverse labels spanning many biomarkers, diseases, etc. that were a good fit for generating verifiable questions.  This approach was also appealing because we thought incentivizing reasoning would lead to more interpretable results for clinicians in downstream applications.
+
+### A Series of Mistaken Hypotheses
+
+|Model|Accuracy|
+|---|---|
+|Gemma-4-E4B|0.409|
+|Gemma-4-26B-A4B|0.755|
+|Gemma-4-E4B-RL|0.625|
+
+
+
+

@@ -8,7 +8,6 @@ mathjax: true
 classes: wide
 ---
 
-### The Foundations
 In the previous article, we created a lattice model to represent the map we have to gerrymander, where all the tiles belong to one giant region.  Now, we have to create the set of gerrymandered districts.  A district in our case is just a list containing all the tiles in it, filling some constraints.  It must be contiguous - meaning that every tile in it must be reachable from any other tile in it without crossing into a different district, and all districts must have relatively similar populations.
 
 To actually generate these districts, we'll start with a random(ish) starting district set and slowly make the map more gerrymandered with simulated annealing.

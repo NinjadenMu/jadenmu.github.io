@@ -15,7 +15,6 @@ permalink: /posts/
 </div>
 
 <h3 class="archive__subtitle home__section-title">Posts from High School</h3>
-<p class="home__section-desc">Writing from high school that I still enjoy</p>
 <div class="entries-{{ entries_layout }}">
   {% for post in site.posts %}
     {% if post.categories contains 'high-school' %}

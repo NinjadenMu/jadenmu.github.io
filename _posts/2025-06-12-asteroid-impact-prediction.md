@@ -1,5 +1,5 @@
 ---
-title:  "The Math Behind Asteroid Impact Prediction - Will the Flat-o-Saurs Go Extinct?"
+title:  "The Math Behind Asteroid Impact Prediction"
 date:   2025-06-11
 categories: 
   - applied-computer-science

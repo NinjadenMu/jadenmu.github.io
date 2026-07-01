@@ -16,13 +16,15 @@ $header-font-family: $serif;
   font-weight: 600;
   /*color: $text-color;*/
   margin-top: 1.5em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.25em;
 }
 
 .home__section-desc {
   font-size: 0.875em;
   color: $muted-text-color;
   margin-top: 0.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -31,4 +33,17 @@ a {
 
 .sidebar {
   font-family: $serif;
+}
+
+.entries-list .list__item:first-child .archive__item-title,
+.entries-grid .list__item:first-child .archive__item-title {
+  margin-top: 0;
+}
+
+.list__item .archive__item-title {
+  margin-top: 0.5em;
+}
+
+.archive__item-title a {
+  font-size: 0.85em;
 }
