@@ -3,6 +3,7 @@ title:  "A Ground-Up Guide to Optimizing Matrix Multiplication (from naive loops
 date:   2026-06-22
 categories:
   - systems
+  - high performance computing
   - machine-learning
 mathjax: true
 author_profile: true
