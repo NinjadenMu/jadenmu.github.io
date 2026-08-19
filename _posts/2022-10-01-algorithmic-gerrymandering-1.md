@@ -1,11 +1,13 @@
 ---
 title: "Algorithmic Gerrymandering 1 - Modelling Population and Voter Distributions"
 last_modified_at: 2022-10-01
+project: algorithmic-gerrymandering
+era: high-school
 categories:
   - applied-computer-science
-  - high-school
 mathjax: true
 classes: wide
+permalink: /posts/:title/
 ---
 
 ### What is Gerrymandering?

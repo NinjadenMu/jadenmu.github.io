@@ -3,9 +3,11 @@ title:  "Candid Takeaways and Useful Lessons from Training VLMs for Ophthalmolog
 date:   2026-06-22
 categories:
   - machine-learning
+era: current
 mathjax: true
 author_profile: true
 classes: wide
+permalink: /posts/:title/
 ---
 I've spent the past 3 months at my job fine-tuning vision language models to be better at analyzing ophthalmic imaging data.  We initially expected quick and easy results by applying standard methods (e.g. GRPO) to domain-specific data.  Unfortunately, the results haven't quite matched (my) very high hopes for this project.  Nonetheless, I think there's lessons for future LLM-related projects, valuable takeaways about VLMs in medicine, and interesting results which defied my expectations that are worth writing about.
 

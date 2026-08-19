@@ -8,8 +8,55 @@ $serif: "Lora", Georgia, serif;
 $global-font-family: $serif;
 $header-font-family: $serif;
 
+$background-color: #eee5d6;
+$text-color: #201d19;
+$muted-text-color: #665f56;
+
+$primary-color: #25211d;
+$link-color: #171411;
+$link-color-hover: #514940;
+$link-color-visited: #686056;
+
+$border-color: #cfc3b2;
+$form-background-color: #e7dccb;
+$code-background-color: #e4d8c6;
+$code-background-color-dark: #d9ccb8;
+$footer-background-color: #ddd0bc;
+
+$masthead-link-color: #201d19;
+$masthead-link-color-hover: #665f56;
+$navicon-link-color-hover: #cfc3b2;
+$focus-color: #5c544a;
+
+.page__content p a,
+.page__content li a {
+  text-decoration: underline;
+  text-decoration-color: #aaa398;
+  text-underline-offset: 0.15em;
+}
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+
+.taxonomy__section .archive__subtitle {
+  color: $text-color;
+}
+
+.sidebar {
+  font-family: $serif;
+  color: $text-color;
+  opacity: 0.9;
+  p,
+  li,
+  .author__name,
+  .author__urls-wrapper {
+    font-family: $serif;
+  }
+}
+
+a {
+  font-family: $serif;
+}
 
 .home__section-title {
   font-size: 1.2em;
@@ -18,21 +65,6 @@ $header-font-family: $serif;
   margin-top: 1.5em;
   margin-bottom: 0.75em;
   padding-bottom: 0.25em;
-}
-
-.home__section-desc {
-  font-size: 0.875em;
-  color: $muted-text-color;
-  margin-top: 0.5em;
-  margin-bottom: 1em;
-}
-
-a {
-  font-family: $serif;
-}
-
-.sidebar {
-  font-family: $serif;
 }
 
 .entries-list .list__item:first-child .archive__item-title,
@@ -46,4 +78,79 @@ a {
 
 .archive__item-title a {
   font-size: 0.85em;
+}
+
+.projects {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.projects__section + .projects__section {
+  padding-top: 1.5rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.4fr);
+  overflow: hidden;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  background: rgba($form-background-color, 0.35);
+}
+
+.project-card__image-wrapper {
+  min-height: 100%;
+  background: $form-background-color;
+}
+
+.project-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.project-card__content {
+  padding: 1.25rem 1.5rem;
+}
+
+.project-card__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.35em;
+}
+
+.project-card__description {
+  margin-bottom: 1.25rem;
+}
+
+.project-card__github {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.project-card__writeups h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1em;
+}
+
+.project-card__writeups ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.project-card__writeups li + li {
+  margin-top: 0.35rem;
+}
+
+@media (max-width: 700px) {
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__image {
+    min-height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }

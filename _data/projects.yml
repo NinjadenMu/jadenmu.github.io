@@ -1,0 +1,68 @@
+- slug: MuBLIS
+  era: current
+  title: MuBLIS
+  image: /assets/images/mublis/blis_gemm.png
+  image_alt: A diagram explaining GEMM in the BLIS style
+  github: https://github.com/NinjadenMu/MuBLIS
+  description: >-
+    A framework for instantiating high performance linear algebra (BLAS) libraries, 
+    the routines underlying PyTorch and NumPy. Can match OpenBLAS thanks to 
+    ARM NEON and AVX2 micro-kernels and compile + runtime specialization.
+
+- slug: MinTI
+  era: current
+  title: MinTI-Chess
+  image: /assets/images/minti/minti_thinking.png
+  image_alt: MinTI thinking on a TI-84 Plus CE graphing calculator
+  github: https://github.com/NinjadenMu/MinTI-Chess
+  description: >-
+    The world's strongest chess engine for the TI-84 Plus CE graphing calculator, 
+    playing at over 2000 Elo.  Carefully designed for unique hardware constraints, 
+    such as a 24-bit CPU!
+
+- slug: fast_matmul
+  era: current
+  title: Didactic Fast Matmul
+  image: /assets/images/fast_matmul/plot.png
+  image_alt: Comparisions of different matrix multiplication implementations
+  github: https://github.com/NinjadenMu/fast_matmul
+  description: >-
+    7 didactic implementations of matrix multiplication building from naive loops 
+    to a parallel kernel that outperforms OpenBLAS.
+
+- slug: asteroids
+  era: high-school
+  title: Asteroid Impact Prediction (ft. Dr. Biceratops!)
+  image: /assets/images/asteroids/detection.gif
+  image_alt: Scanning the skies for NEOs
+  description: >-
+    The potentially world-ending YR4 asteroid got a lot of attention recently.  How does the math 
+    behind predicting asteroid impacts really work?
+
+- slug: algorithmic-gerrymandering
+  era: high-school
+  title: Algorithmic Gerrymandering
+  image: /assets/images/gerrymander/model.png
+  image_alt: Population and voter distribution model
+  github: https://github.com/NinjadenMu/lattice_gerrymandering
+  description: >-
+    Generating stealthily gerrymandered maps using simulated annealing and voter distribution models.
+
+- slug: polycubes
+  era: high-school
+  title: Polycubes
+  image: /assets/images/polycubes/5.png
+  image_alt: 5-cube polycubes
+  github: https://github.com/NinjadenMu/polycubes
+  description: >-
+    Why do math when you can write code?  Mathematical attempts and code to enumerate polycubes, and 
+    computationally finding an error in my homework's answer key.
+
+- slug: rcnn
+  era: high-school
+  title: How does Object Detection with R-CNN work?
+  image: /assets/images/rcnn/edge_boxes_overview.png
+  image_alt: The edge boxes algorithm for region proposal
+  description: >-
+    An in-depth and intuitive explanation to R-CNN object detection and selective search.
+  

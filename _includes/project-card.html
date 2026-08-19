@@ -1,0 +1,45 @@
+{% assign project = include.project %}
+{% assign project_posts = site.posts | where: "project", project.slug %}
+
+<article class="project-card">
+  <div class="project-card__image-wrapper">
+    <img
+      class="project-card__image"
+      src="{{ project.image | relative_url }}"
+      alt="{{ project.image_alt | escape }}"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="project-card__content">
+    <h2 class="project-card__title">{{ project.title }}</h2>
+
+    <p class="project-card__description">
+      {{ project.description }}
+    </p>
+
+    <div class="project-card__links">
+      {% if project.github %}
+        <a class="project-card__github" href="{{ project.github }}">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+          View on GitHub
+        </a>
+      {% endif %}
+
+      {% if project_posts.size > 0 %}
+        <div class="project-card__writeups">
+          <h3>Writeups</h3>
+          <ul>
+            {% for post in project_posts %}
+              <li>
+                <a href="{{ post.url | relative_url }}">
+                  {{ post.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</article>

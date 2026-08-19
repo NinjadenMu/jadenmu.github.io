@@ -1,11 +1,13 @@
 ---
 title: "What is Object Detection and how do R-CNN models do it?"
 last_modified_at: 2023-07-27
+project: rcnn
+era: high-school
 categories:
   - machine-learning
-  - high-school
 mathjax: true
 classes: wide
+permalink: /posts/:title/
 ---
 
 ### What is Object Detection
@@ -50,3 +52,4 @@ Region proposal algorithms can be evaluated by themselves by computing the recal
 2 of the fastest and best performing algorithms for region proposal are selective search and edge boxes.  Although, these hard-coded region proposal algorithms are replaced with a learned region proposal network in the SOTA Faster-RCNN models, they are still quite interesting in how they do a decent job on a difficult task using a combination of simpler algorithms.  They're also nice in how they are dataset agnostic - edge boxes and selective search can do a good job proposing regions of interest regardless of whether they've seen a particular object before.
 
 #### Selective Search
+\[Later note: I never got around to finishing this article\]

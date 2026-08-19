@@ -1,6 +1,8 @@
 ---
 title:  "A Ground-Up Guide to Optimizing Matrix Multiplication (from naive loops to beating OpenBLAS)"
 date:   2026-06-22
+era: current
+project: fast_matmul
 categories:
   - systems
   - high performance computing
@@ -8,4 +10,5 @@ categories:
 mathjax: true
 author_profile: true
 classes: wide
+permalink: /posts/:title/
 ---

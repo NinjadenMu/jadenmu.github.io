@@ -1,11 +1,13 @@
 ---
 title:  "The Surprisingly Hard Problem of Polycube Enumeration"
 date:   2024-11-25
+project: polycubes
+era: high-school
 categories:
   - applied-computer-science 
-  - high-school
 mathjax: true
 classes: wide
+permalink: /posts/:title/
 ---
 In my Intro to Engineering class, we were tasked with designing a Megaron puzzle cube.  A Megaron cube consists of 5 puzzle piece (each built out of some number of $$\frac{3}{4}$$" wood cubes) that should assemble into a 3x3x3 cube, as shown below:
 
@@ -24,7 +26,7 @@ The puzzle parts built out of wood cubes are actually known in mathematics as "p
 The first thing I tried after hand-drawing a few possibilities was building a recursive formula.  I figured that each extra cube added would multiply the number of possiblities by the number of faces of the polycube.  For example, a polycube of $$n=1$$ has 1 possibility and 6 faces, so $$n=2$$ has 6 possibilities (not accounting for uniqueness yet).  Unfortunately, I wasn't able to make much progress in this direction because the number of faces exposed isn't the same for every polycube.
 
 #### Chirality
-This is somewhat irrelevant, but it's something kind of cool I learned about.  Think of your right and left hands - they have the same shape as each other, but they're mirror images.  There's no way to overlap your hands with both palms facing the same direction (when you clap, your fingers overlap but are facing opposite directions).  This idea also applies for polycubes.  Consider the last 2 polycubes in my somewhat-messy hand-drawn chart above: they're almost the same, but they're distinct.  This is called a chiral pair.  (Sometimes, we want to treat chiral pairs as non-distinct, but I'll treat them as distinct in my project.)
+This is somewhat irrelevant, but it's something kind of cool I learned about (I think it's cool because of that Breaking Bad scene).  Think of your right and left hands - they have the same shape as each other, but they're mirror images.  There's no way to overlap your hands with both palms facing the same direction (when you clap, your fingers overlap but are facing opposite directions).  This idea also applies for polycubes.  Consider the last 2 polycubes in my somewhat-messy hand-drawn chart above: they're almost the same, but they're distinct.  This is called a chiral pair.  (Sometimes, we want to treat chiral pairs as non-distinct, but I'll treat them as distinct in my project.)
 
 #### Back to Finding an Explicit Solution
 My next idea was to define a polycube as a path between two endpoints.  To simplify my explanation, let's take 2-D polycubes (combinations of unit squares, known as polyominoes) as an example.  

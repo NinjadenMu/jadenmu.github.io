@@ -1,11 +1,13 @@
 ---
 title:  "The Math Behind Asteroid Impact Prediction"
 date:   2025-06-11
+project: asteroids
+era: high-school
 categories: 
   - applied-computer-science
-  - high-school
 mathjax: true
 classes: wide
+permalink: /posts/:title/
 ---
 65 million years ago, the dinosaurs were wiped out by an asteroid.  The Flat-o-saurs are like the dinosaurs, but they live on a 2D planet called plane-et (which makes the math a bit cleaner in this article).  Dr. Bi-ceratops, the 2D cousin of the 3D Triceratops, has set up an asteroid detection and monitoring system to try to avoid his cousin's tragic fate.
 
@@ -102,7 +104,7 @@ Then, we'll be able to get a distribution for something like $$(v_{x_0}, v_{y_0}
 
 If Dr. Bi-ceratops were a 3 dimensional creature instead of a 2 dimensional creature, he'd be able to see that the actual distribution looks like a 3D ellipsoid describing the uncertainty in $$r_0, v_{x_0}$$, and $$v_{y_0}$$!
 
-Now that the asteroid is pinpointed, it's pretty easy*** to calculate the probability of impact with plane-et.  Just sample a bunch of asteroids from the probability distribution, simulate their paths using Newton's laws of motion, and check if they collide with plane-et, and we're done!
+Now that the asteroid is pinpointed, it's pretty easy* to calculate the probability of impact with plane-et.  Just sample a bunch of asteroids from the probability distribution, simulate their paths using Newton's laws of motion, and check if they collide with plane-et, and we're done!
 
 ![Dinosaurs saying Thank You :)](/assets/images/asteroids/dino_thank_you.png)
 

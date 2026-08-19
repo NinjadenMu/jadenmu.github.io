@@ -5,21 +5,19 @@ layout: archive
 {{ content }}
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
+{% assign current_posts = site.posts | where: "era", "current" %}
+{% assign high_school_posts = site.posts | where: "era", "high-school" %}
 
-<h3 class="archive__subtitle home__section-title">Recent Posts</h3>
+<h3 class="archive__subtitle home__section-title">Current Posts</h3>
 <div class="entries-{{ entries_layout }}">
-  {% for post in site.posts %}
-    {% unless post.categories contains 'high-school' %}
-      {% include archive-single.html type=entries_layout %}
-    {% endunless %}
+  {% for post in current_posts %}
+    {% include archive-single.html type=entries_layout %}
   {% endfor %}
 </div>
 
 <h3 class="archive__subtitle home__section-title">Posts from High School</h3>
 <div class="entries-{{ entries_layout }}">
-  {% for post in site.posts %}
-    {% if post.categories contains 'high-school' %}
-      {% include archive-single.html type=entries_layout %}
-    {% endif %}
+  {% for post in high_school_posts %}
+    {% include archive-single.html type=entries_layout %}
   {% endfor %}
 </div>

@@ -1,0 +1,34 @@
+{% assign current_projects = site.data.projects | where: "era", "current" %}
+{% assign high_school_projects = site.data.projects | where: "era", "high-school" %}
+
+{% if current_projects.size > 0 %}
+  <section class="projects__section">
+    <h2>Featured</h2>
+
+    <p class="projects__section-description">
+      My best current work, some longform writeups are associated with projects while others are independent.
+    </p>
+
+    <div class="projects">
+      {% for project in current_projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+
+{% if high_school_projects.size > 0 %}
+  <section class="projects__section">
+    <h2>Work from High School</h2>
+
+    <p class="projects__section-description">
+      Earlier projects and writing from before college
+    </p>
+
+    <div class="projects">
+      {% for project in high_school_projects %}
+        {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
