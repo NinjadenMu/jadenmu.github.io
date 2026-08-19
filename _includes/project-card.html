@@ -19,13 +19,6 @@
     </p>
 
     <div class="project-card__links">
-      {% if project.github %}
-        <a class="project-card__github" href="{{ project.github }}">
-          <i class="fab fa-fw fa-github" aria-hidden="true"></i>
-          View on GitHub
-        </a>
-      {% endif %}
-
       {% if project_posts.size > 0 %}
         <div class="project-card__writeups">
           <h3>Writeups</h3>
@@ -39,6 +32,13 @@
             {% endfor %}
           </ul>
         </div>
+      {% endif %}
+
+      {% if project.github %}
+        <a class="project-card__github" href="{{ project.github }}">
+          <i class="fab fa-fw fa-github" aria-hidden="true"></i>
+          View on GitHub
+        </a>
       {% endif %}
     </div>
   </div>

@@ -19,12 +19,7 @@
 
 {% if high_school_projects.size > 0 %}
   <section class="projects__section">
-    <h2>Work from High School</h2>
-
-    <p class="projects__section-description">
-      Earlier projects and writing from before college
-    </p>
-
+    <h2>Earlier projects and writing from before college</h2>
     <div class="projects">
       {% for project in high_school_projects %}
         {% include project-card.html project=project %}

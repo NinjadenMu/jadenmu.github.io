@@ -44,7 +44,6 @@
   title: Algorithmic Gerrymandering
   image: /assets/images/gerrymander/model.png
   image_alt: Population and voter distribution model
-  github: https://github.com/NinjadenMu/lattice_gerrymandering
   description: >-
     Generating stealthily gerrymandered maps using simulated annealing and voter distribution models.
 
@@ -53,7 +52,6 @@
   title: Polycubes
   image: /assets/images/polycubes/5.png
   image_alt: 5-cube polycubes
-  github: https://github.com/NinjadenMu/polycubes
   description: >-
     Why do math when you can write code?  Mathematical attempts and code to enumerate polycubes, and 
     computationally finding an error in my homework's answer key.
