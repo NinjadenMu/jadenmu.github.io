@@ -12,3 +12,4 @@ author_profile: true
 classes: wide
 permalink: /posts/:title/
 ---
+A detailed longform article is coming, but for now, the [GitHub](https://github.com/NinjadenMu/fast_matmul) files are heavily annotated and are intended to stand on their own.
