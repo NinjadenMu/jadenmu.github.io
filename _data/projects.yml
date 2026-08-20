@@ -53,7 +53,7 @@
   image: /assets/images/adav/adav_thumbnail.png
   image_alt: Object vanishing adversarial patch attack
   description: >-
-    How dversarial patches can destroy autonomous vehicle perception systems.
+    Adversarial patches are a threat to deep neural network based perception systems
 
 - slug: polycubes
   era: high-school
