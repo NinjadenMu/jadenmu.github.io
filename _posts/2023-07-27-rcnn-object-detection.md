@@ -7,6 +7,7 @@ categories:
   - machine-learning
 mathjax: true
 classes: wide
+author_profile: true
 permalink: /posts/:title/
 ---
 

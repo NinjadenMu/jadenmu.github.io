@@ -7,6 +7,7 @@ categories:
   - applied-computer-science
 mathjax: true
 classes: wide
+author_profile: true
 permalink: /posts/:title/
 ---
 65 million years ago, the dinosaurs were wiped out by an asteroid.  The Flat-o-saurs are like the dinosaurs, but they live on a 2D planet called plane-et (which makes the math a bit cleaner in this article).  Dr. Bi-ceratops, the 2D cousin of the 3D Triceratops, has set up an asteroid detection and monitoring system to try to avoid his cousin's tragic fate.

@@ -7,6 +7,7 @@ categories:
   - applied-computer-science 
 mathjax: true
 classes: wide
+author_profile: true
 permalink: /posts/:title/
 ---
 In my Intro to Engineering class, we were tasked with designing a Megaron puzzle cube.  A Megaron cube consists of 5 puzzle piece (each built out of some number of $$\frac{3}{4}$$" wood cubes) that should assemble into a 3x3x3 cube, as shown below:

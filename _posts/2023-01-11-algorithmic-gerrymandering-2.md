@@ -7,6 +7,7 @@ categories:
   - applied-computer-science
 mathjax: true
 classes: wide
+author_profile: true
 permalink: /posts/:title/
 ---
 

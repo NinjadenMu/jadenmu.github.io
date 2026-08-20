@@ -47,6 +47,14 @@
   description: >-
     Generating stealthily gerrymandered maps using simulated annealing and voter distribution models.
 
+- slug: adav
+  era: high-school
+  title: Adversarial Patches and Autonomous Vehicles
+  image: /assets/images/adav/adav_thumbnail.png
+  image_alt: Object vanishing adversarial patch attack
+  description: >-
+    How dversarial patches can destroy autonomous vehicle perception systems.
+
 - slug: polycubes
   era: high-school
   title: Polycubes

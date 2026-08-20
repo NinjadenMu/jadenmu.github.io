@@ -6,6 +6,7 @@ era: high-school
 categories:
   - applied-computer-science
 mathjax: true
+author_profile: true
 classes: wide
 permalink: /posts/:title/
 ---
