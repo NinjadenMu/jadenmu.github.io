@@ -18,7 +18,7 @@
   description: >-
     The world's strongest chess engine for the TI-84 Plus CE graphing calculator, 
     playing at over 2000 Elo.  Carefully designed for unique hardware constraints, 
-    such as a 24-bit CPU!
+    such as a 24-bit CPU!  100+ downloads on Cemetech from people around the world!
 
 - slug: fast_matmul
   era: current
