@@ -8,30 +8,30 @@ $serif: "Lora", Georgia, serif;
 $global-font-family: $serif;
 $header-font-family: $serif;
 
-$background-color: #eee5d6;
-$text-color: #201d19;
-$muted-text-color: #665f56;
+$background-color: #edf3ed;
+$text-color: #1b211c;
+$muted-text-color: #667067;
 
-$primary-color: #25211d;
-$link-color: #171411;
-$link-color-hover: #514940;
-$link-color-visited: #686056;
+$primary-color: #263128;
+$link-color: #365b3c;
+$link-color-hover: #58735d;
+$link-color-visited: #687669;
 
-$border-color: #cfc3b2;
-$form-background-color: #e7dccb;
-$code-background-color: #e4d8c6;
-$code-background-color-dark: #d9ccb8;
-$footer-background-color: #ddd0bc;
+$border-color: #c7d2c8;
+$form-background-color: #dde7de;
+$code-background-color: #dbe5dc;
+$code-background-color-dark: #d0dbd1;
+$footer-background-color: #d8e2d9;
 
-$masthead-link-color: #201d19;
-$masthead-link-color-hover: #665f56;
-$navicon-link-color-hover: #cfc3b2;
-$focus-color: #5c544a;
+$masthead-link-color: #263128;
+$masthead-link-color-hover: #657168;
+$navicon-link-color-hover: #c7d2c8;
+$focus-color: #58705c;
 
 .page__content p a,
 .page__content li a {
   text-decoration: underline;
-  text-decoration-color: #aaa398;
+  text-decoration-color: #98aa9b;
   text-underline-offset: 0.15em;
 }
 
